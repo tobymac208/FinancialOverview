@@ -10,6 +10,9 @@ class DebtItem:
     def get_info(self):
         return self.name + ": " + str(self.amount)
 
+    def get_name(self):
+        return self.name
+
     def get_amount(self):
         return self.amount
 

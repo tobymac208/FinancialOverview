@@ -35,3 +35,7 @@ with open('income.txt', 'w', encoding = 'utf-8') as file:
     # write data
     for entry in overview.get_income_list():
         file.write('{},{}'.format(entry.get_name(), entry.get_amount()))
+with open('debt.txt', 'w', encoding = 'utf-8') as file:
+    # write data
+    for entry in overview.get_debt_list():
+        file.write('{},{}'.format(entry.get_name(), entry.get_amount()))
