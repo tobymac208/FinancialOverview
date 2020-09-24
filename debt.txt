@@ -1,2 +1,4 @@
-pluralsight,20.00
-next level combat,35.00
+Next Level Combat,130.00
+Next Insurance,62.30
+Hulu,12.00
+Gym,30.00
