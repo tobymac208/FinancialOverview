@@ -61,7 +61,16 @@ while True:
         elif user_input is 2:
             continue
     if user_input is 2:
-        continue
+        user_input = int(input('(1) add, (2) back: '))
+        # check the input
+        if user_input is 1:
+            # create a new income item
+            print('create new debt item: ')
+            income_name = input('name: ')
+            income_amount = float(input('amount: '))
+            new_item = DebtItem(income_name, income_amount)
+            overview.add_debt_item(new_item)
+            continue
     # leave the loop
     elif user_input is 3:
         print('exiting...')
