@@ -36,16 +36,17 @@ def write_data(object):
 # Setup our main object
 overview = read_data("Nik's finances for the month of September 2020")
 
-# print out the info
-overview.print_overview()
-
-# allow the user to give input
+# print the menu
 # TODO: Finish
 while True:
-    first_input = input('(1) income, (2) debt, (3) exit')
+    # print out the info
+    overview.print_overview()
+    first_input = input('(1) income, (2) debt, (3) exit: ')
     user_input = int(first_input)
-    if user_input is 1:
-        print()
+    # leave the loop
+    if user_input is 3:
+        print('exiting...')
+        break
 
 # write data out to files
 write_data(overview)
