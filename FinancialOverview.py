@@ -52,3 +52,9 @@ class FinancialOverview:
             print("percentage of income being used: {}%".format(round(100 * (total_owed/total_paid))))
         except ZeroDivisionError:
             print("divide by zero")
+    
+    def get_income_list(self):
+        return self.income_info.get_list()
+    
+    def get_debt_list(self):
+        return self.debt_info.get_list()

@@ -5,6 +5,7 @@ from DebtInfo import DebtItemList
 from FinancialOverview import FinancialOverview
 
 # read in the income and debt data
+# return a new instance of that object with the specified name
 def read_data(name_of_overview):
     object = FinancialOverview(name_of_overview)
     with open("income.txt", 'r', encoding = 'utf-8') as file:
@@ -30,3 +31,7 @@ overview.print_overview()
 
 # write data out to files
 # TODO: Write data
+with open('income.txt', 'w', encoding = 'utf-8') as file:
+    # write data
+    for entry in overview.get_income_list():
+        file.write('{},{}'.format(entry.get_name(), entry.get_amount()))
