@@ -4,6 +4,10 @@ from DebtInfo import DebtItem
 from DebtInfo import DebtItemList
 from FinancialOverview import FinancialOverview
 
+# load in data
+income_file = open("income.txt")
+debt_file = open("debt.txt")
+
 # Setup our main object
 overview = FinancialOverview("Nik's finances for the month of September 2020")
 
@@ -28,3 +32,6 @@ overview.add_debt_item(debt_item_four)
 
 # print out the info
 overview.print_overview()
+
+# write data out to files
+# TODO: Write data
