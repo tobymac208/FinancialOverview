@@ -22,6 +22,16 @@ def read_data(name_of_overview):
             new_debt_item = DebtItem(split_string[0], float(split_string[1]))
             object.add_debt_item(new_debt_item)
     return object
+def write_data(object):
+    if not isinstance(object, FinancialOverview):
+        raise TypeError('wrong type')
+    with open('income.txt', 'w', encoding = 'utf-8') as file:
+        for entry in object.get_income_list():
+            file.write('{},{}\n'.format(entry.get_name(), entry.get_amount()))
+    with open('debt.txt', 'w', encoding = 'utf-8') as file:
+        # write data
+        for entry in object.get_debt_list():
+            file.write('{},{}\n'.format(entry.get_name(), entry.get_amount()))  
 
 # Setup our main object
 overview = read_data("Nik's finances for the month of September 2020")
@@ -31,11 +41,4 @@ overview.print_overview()
 
 # write data out to files
 # TODO: Write data
-with open('income.txt', 'w', encoding = 'utf-8') as file:
-    # write data
-    for entry in overview.get_income_list():
-        file.write('{},{}\n'.format(entry.get_name(), entry.get_amount()))
-with open('debt.txt', 'w', encoding = 'utf-8') as file:
-    # write data
-    for entry in overview.get_debt_list():
-        file.write('{},{}\n'.format(entry.get_name(), entry.get_amount()))
+write_data(overview)
