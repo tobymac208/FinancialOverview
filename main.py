@@ -3,6 +3,7 @@ from IncomeInfo import IncomeItemList
 from DebtInfo import DebtItem
 from DebtInfo import DebtItemList
 from FinancialOverview import FinancialOverview
+import os
 
 # read in the income and debt data
 # return a new instance of that object with the specified name
@@ -39,12 +40,30 @@ overview = read_data("Nik's finances for the month of September 2020")
 # print the menu
 # TODO: Finish
 while True:
+    # clear the screen
+    os.system('clear')
+
     # print out the info
     overview.print_overview()
-    first_input = input('(1) income, (2) debt, (3) exit: ')
-    user_input = int(first_input)
+    
+    user_input = int(input('(1) income, (2) debt, (3) exit: '))
+    if user_input is 1:
+        user_input = int(input('(1) add, (2) back: '))
+        # check the input
+        if user_input is 1:
+            # create a new income item
+            print('create new income item: ')
+            income_name = input('name: ')
+            income_amount = float(input('amount: '))
+            new_item = IncomeItem(income_name, income_amount)
+            overview.add_income_item(new_item)
+            continue
+        elif user_input is 2:
+            continue
+    if user_input is 2:
+        continue
     # leave the loop
-    if user_input is 3:
+    elif user_input is 3:
         print('exiting...')
         break
 
