@@ -39,6 +39,13 @@ overview = read_data("Nik's finances for the month of September 2020")
 # print out the info
 overview.print_overview()
 
+# allow the user to give input
+while True:
+    first_input = input('(1) income, (2) debt, (3) exit')
+    user_input = int(first_input)
+    if user_input is 1:
+        print()
+
 # write data out to files
 # TODO: Write data
 write_data(overview)
