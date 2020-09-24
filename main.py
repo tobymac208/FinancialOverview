@@ -4,12 +4,18 @@ from DebtInfo import DebtItem
 from DebtInfo import DebtItemList
 from FinancialOverview import FinancialOverview
 
-# load in data
-income_file = open("income.txt")
-debt_file = open("debt.txt")
-
 # Setup our main object
 overview = FinancialOverview("Nik's finances for the month of September 2020")
+
+# load in data
+with open("income.txt", 'r', encoding = 'utf-8') as file:
+    # load in income data
+    for line in file:
+        split_string = line.split(',')
+        # use the data to create a new IncomeItem
+        new_income_item = IncomeItem(split_string[0], split_string[1])
+        # add the new item
+        overview.add_income_item(new_income_item)
 
 # get some income items ready
 income_item_one = IncomeItem("Alexander Home Services", 530.83)
