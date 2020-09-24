@@ -16,6 +16,11 @@ with open("income.txt", 'r', encoding = 'utf-8') as file:
         new_income_item = IncomeItem(split_string[0], split_string[1])
         # add the new item
         overview.add_income_item(new_income_item)
+with open('debt.txt', 'r', encoding='utf-8') as file:
+    for line in file:
+        split_string = line.split(',')
+        new_debt_item = DebtItem(split_string[0], split_string[1])
+        overview.add_debt_item(new_debt_item)
 
 # get some income items ready
 income_item_one = IncomeItem("Alexander Home Services", 530.83)
