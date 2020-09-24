@@ -48,4 +48,7 @@ class FinancialOverview:
         # Print the overall amount left
         print("Net proft for this month: {}".format(total_paid - total_owed))
         # Print the percentage of income going away
-        print("percentage of income being used: {}%".format(round(100 * (total_owed/total_paid))))
+        try:
+            print("percentage of income being used: {}%".format(round(100 * (total_owed/total_paid))))
+        except ZeroDivisionError:
+            print("divide by zero")
