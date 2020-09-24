@@ -1,4 +1,4 @@
-Next Level Combat,130.00
-Next Insurance,62.30
-Hulu,12.00
-Gym,30.00
+Next Level Combat,130.0
+Next Insurance,62.3
+Hulu,12.0
+Gym,30.0
