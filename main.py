@@ -5,6 +5,9 @@ from DebtInfo import DebtItemList
 from FinancialOverview import FinancialOverview
 import os
 
+def clear_screen():
+    os.system('clear')
+
 # read in the income and debt data
 # return a new instance of that object with the specified name
 def read_data(name_of_overview):
@@ -48,7 +51,7 @@ while True:
     
     user_input = int(input('(1) income, (2) debt, (3) exit: '))
     if user_input is 1:
-        user_input = int(input('(1) add, (2) back: '))
+        user_input = int(input('(1) add, (2) remove (3) back: '))
         # check the input
         if user_input is 1:
             # create a new income item
@@ -59,6 +62,11 @@ while True:
             overview.add_income_item(new_item)
             continue
         elif user_input is 2:
+            os.system('clear')
+            # allow the user to remove an expense
+            print('remove and expense')
+            continue
+        elif user_input is 3:
             continue
     if user_input is 2:
         user_input = int(input('(1) add, (2) back: '))
