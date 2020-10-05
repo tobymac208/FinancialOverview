@@ -44,7 +44,7 @@ overview = read_data("Nik's finances for the month of September 2020")
 # TODO: Finish
 while True:
     # clear the screen
-    os.system('clear')
+    clear_screen()
 
     # print out the info
     overview.print_overview()
@@ -62,7 +62,7 @@ while True:
             overview.add_income_item(new_item)
             continue
         elif user_input is 2:
-            os.system('clear')
+            clear_screen()
             # allow the user to remove an expense
             print('remove and expense')
             continue
