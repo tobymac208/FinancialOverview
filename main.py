@@ -4,9 +4,14 @@ from DebtInfo import DebtItem
 from DebtInfo import DebtItemList
 from FinancialOverview import FinancialOverview
 import os
+import platform
 
 def clear_screen():
-    os.system('clear')
+    system = platform.system()
+    if system == "Linux":
+        os.system('clear')
+    else:
+        os.system('cls')
 
 # read in the income and debt data
 # return a new instance of that object with the specified name
@@ -20,6 +25,7 @@ def read_data(name_of_overview):
             new_income_item = IncomeItem(split_string[0], float(split_string[1]))
             # add the new item
             object.add_income_item(new_income_item)
+    # load in the debt data
     with open('debt.txt', 'r', encoding='utf-8') as file:
         for line in file:
             split_string = line.split(',')
@@ -35,7 +41,7 @@ def write_data(object):
     with open('debt.txt', 'w', encoding = 'utf-8') as file:
         # write data
         for entry in object.get_debt_list():
-            file.write('{},{}\n'.format(entry.get_name(), entry.get_amount()))  
+            file.write('{},{}\n'.format(entry.get_name(), entry.get_amount()))
 
 # Setup our main object
 overview = read_data("Nik's finances for the month of September 2020")
