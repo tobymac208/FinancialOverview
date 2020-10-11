@@ -14,6 +14,9 @@ class IncomeItem:
     def get_info(self):
         return self.source_of_income + ": " + str(self.amount)
 
+    def get_name(self):
+        return self.source_of_income
+    
     def get_amount(self):
         return self.amount
 
